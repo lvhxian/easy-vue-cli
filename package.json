@@ -4,10 +4,35 @@
   "description": "Weclome to easy-vue-cli",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-client": "cross-env NODE_ENV=production webpack --config config/webpack.client.js",
+    "build-server": "cross-env NODE_ENV=production webpack --config config/webpack.server.js",
+    "clean": "rimraf build && rimraf server-build",
+    "build": "npm run clean && npm run build-client && npm run build-server && npm run upload",
+    "dev-client": "cross-env NODE_ENV=development webpack-dev-server --inline --color --config config/webpack.client.js",
+    "dev-server": "nodemon server/app.js",
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+    "upload" : "node dev/devOss.js",
+    "precommit": "npm run lint-fix",
+    "start": "cross-env NODE_ENV=production node server/app.js",
+    "lint-fix": "eslint --fix --ext .js --ext .jsx --ext .vue client/"
   },
   "author": "Toby",
   "license": "ISC",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "ejs": "^2.5.7",
+    "koa": "^2.5.1",
+    "koa-body": "^2.5.0",
+    "koa-router": "^7.4.0",
+    "koa-send": "^4.1.2",
+    "koa-session": "^5.8.1",
+    "sha1": "^1.1.1",
+    "vue": "2.5.13",
+    "vue-meta": "^1.4.3",
+    "vue-router": "^3.0.1",
+    "vue-server-renderer": "^2.5.13",
+    "vuex": "^3.0.1"
+  },
   "devDependencies": {
     "autoprefixer": "7.2.3",
     "babel-core": "6.26.0",
@@ -53,5 +78,8 @@
     "webpack": "3.10.0",
     "webpack-dev-server": "2.9.7",
     "webpack-merge": "^4.1.1"
+  },
+  "proxy": {
+    
   }
 }
