@@ -1,16 +1,20 @@
 // 创建服务端vue模板
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Vuex from 'vuex'
-import Meta from 'vue-meta'
-import App from './views/app.vue'
-import createStore from './store/store'
-import createRouter from './router/router'
+import VueRouter from 'vue-router' // 路由
+import Vuex from 'vuex' // 状态管理器
+import Meta from 'vue-meta' // vue修改TDK的
+import createStore from './store/store' // 状态管理器初始化
+import createRouter from './router/router' // 路由初始化
+import fastclick from 'fastclick' // 移动端300毫秒
+import App from './views/app.vue' // 这个你们看不懂我也没办法了
 
 // 注册插件和组件
 Vue.use(VueRouter)
 Vue.use(Vuex)
 Vue.use(Meta)
+
+// 全局配置fastclick
+fastclick.attach(document.body)
 
 // 每次都要返回一个新的实例 避免冲突
 export default () => {
