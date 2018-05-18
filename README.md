@@ -13,7 +13,7 @@
 # 使用方法
 克隆仓库至本地
 ```
-git clone git@github.com:iTobys/easy-vue-cli.git
+git clone https://github.com/iTobys/easy-vue-cli.git
 ```
 进入项目目录，运行
 ```
