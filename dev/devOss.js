@@ -3,7 +3,7 @@ const qiniu = require('qiniu')
 const fs = require('fs')
 const path = require('path')
 
-const ossConfig = require('../oss.config').cdn
+const ossConfig = require('../public/oss.config').cdn
 
 const {
   ak, sk, bucket

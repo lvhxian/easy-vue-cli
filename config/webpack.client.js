@@ -11,7 +11,7 @@ const notifier = require('node-notifier') // node错误信息提醒
 const portfinder = require('portfinder')
 const baseConfig = require('./webpack.base') // 公共配置
 const VueClientPlugin = require('vue-server-renderer/client-plugin')
-const cdnConfig = require('../app.config').cdn // 配置目录
+const cdnConfig = require('../public/oss.config').cdn // 配置目录
 
 const isDev = process.env.NODE_ENV === 'development' // 判断是否为生产环境
 // 默认生成html结构
