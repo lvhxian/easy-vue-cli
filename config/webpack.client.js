@@ -12,7 +12,7 @@ const portfinder = require('portfinder')
 const baseConfig = require('./webpack.base') // 公共配置
 const VueClientPlugin = require('vue-server-renderer/client-plugin')
 const cdnConfig = require('../public/oss.config').cdn // 配置目录
-
+const devServer = require('../dev/devServer')
 const isDev = process.env.NODE_ENV === 'development' // 判断是否为生产环境
 // 默认生成html结构
 const defaultPluins = [

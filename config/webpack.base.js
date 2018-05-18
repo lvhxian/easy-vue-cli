@@ -1,5 +1,5 @@
 const path = require('path')
-const createVueLoaderOptions = require('../dev/vue-loader.config') // 引入vue-loader处理
+const createVueLoaderOptions = require('../dev/devVueLoader') // 引入vue-loader处理
 const isDev = process.env.NODE_ENV === 'development' // 判断是否为生产环境
 
 // 基础配置
