@@ -3,8 +3,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router' // 路由
 import Vuex from 'vuex' // 状态管理器
 import Meta from 'vue-meta' // vue修改TDK的
-import createStore from './store/store' // 状态管理器初始化
-import createRouter from './router/router' // 路由初始化
+import createStore from './store/index' // 状态管理器初始化
+import createRouter from './router/index' // 路由初始化
 import fastclick from 'fastclick' // 移动端300毫秒
 import App from './views/app.vue' // 这个你们看不懂我也没办法了
 
