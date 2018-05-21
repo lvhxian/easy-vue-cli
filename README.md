@@ -9,6 +9,8 @@
 - [x] 更多的Vue推荐的拓展包如Fastclick、vue-router、vuex、vue-meta等
 - [x] 支持打包自动上传静态服务器（以七牛云为主，需自行配置oss.config.js）
 - [x] 内置安装koa，O配置使用ssr环境（本地ssr调试待定）
+- [ ] 发布至npm，让安装更为简单
+- [ ] 脚手架加入easy-cookies，减少你对缓存的选择
 - [ ] 更多内容敬请期待
 # 使用方法
 克隆仓库至本地
