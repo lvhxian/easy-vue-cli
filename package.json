@@ -14,7 +14,7 @@
     "upload": "node dev/devOss.js",
     "precommit": "npm run lint-fix",
     "start": "cross-env NODE_ENV=production node server/app.js",
-    "lint-fix": "eslint --fix --ext .js --ext .jsx --ext .vue client/"
+    "lint-fix": "eslint --fix --ext .js --ext .jsx --ext .vue src/"
   },
   "author": "Toby",
   "license": "ISC",
@@ -26,8 +26,6 @@
     "koa-body": "^2.5.0",
     "koa-router": "^7.4.0",
     "koa-send": "^4.1.2",
-    "koa-session": "^5.8.1",
-    "sha1": "^1.1.1",
     "vue": "2.5.13",
     "vue-meta": "^1.4.3",
     "vue-router": "^3.0.1",
