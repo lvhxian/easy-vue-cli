@@ -28,14 +28,29 @@ const config = {
         options: createVueLoaderOptions(isDev) // 对.vue文件进行处理
       },
       {
-        test: /\.jsx$/,
-        loader: 'babel-loader'
-      },
-      {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/
       },
+      // 媒体
+      {
+        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: 'media/[name].[hash:7].[ext]'
+        }
+      },
+      // 字体图标处理
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: 'fonts/[name].[hash:7].[ext]'
+        }
+      },
+      // 图片处理
       {
         test: /\.(gif|jpg|jpeg|png|svg)$/,
         use: [
@@ -43,10 +58,15 @@ const config = {
             loader: 'url-loader',
             options: {
               limit: 1024,
-              name: 'resources/[path][name].[hash].[ext]' // 打包规范好图片位置
+              name: 'resources/[name].[hash:7].[ext]' // 打包规范好图片位置
             }
           }
         ]
+      },
+      // 兼容stylus
+      {
+        test:/\.css$/,
+        loader:'style-loader!css-loader!stylus-loader'
       }
     ]
   }
