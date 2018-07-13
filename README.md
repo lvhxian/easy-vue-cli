@@ -1,14 +1,14 @@
 # Easy-Vue-Cli --- 超简单的Vue脚手架
-## 最简单、最易懂的vue脚手架（全中文注释喔）=> 更多黑科技等着你们去发掘
-- [x] webpack3.x配置，保持原有的风格(后续进行升级webpack4.x)
+## 开箱即用的vue脚手架（全中文注释）
+- [x] 全薪升级的webpack4版本，优化目录文件
 - [x] 优雅的打包进度条, 让你的终端更加优雅
-- [x] 支持webpack-dev-server和node环境同时开启，减少你桌面的终端窗口
+- [ ] 支持webpack-dev-server和node环境同时开启，减少你桌面的终端窗口
 - [x] 第三方内库与本地代码分隔，公用代码提取，代码不再重复
 - [x] 支持jsx语法、ejs模板，不在局限于写.vue文件
 - [x] 更简单的proxy配置，只需要再package.json内的proxy配置即可
-- [x] 更多的Vue推荐的拓展包如Fastclick（iso有兼容问题待修复）、vue-router、vuex、vue-meta等
-- [x] 支持打包自动上传静态服务器（以七牛云为主，需自行配置oss.config.js）
-- [x] 内置安装koa，O配置使用ssr环境（本地ssr调试待定）
+- [ ] 更多的Vue推荐的拓展包如Fastclick（iso有兼容问题待修复）、vue-router、vuex、vue-meta等
+- [ ] 支持打包自动上传静态服务器（以七牛云为主，需自行配置oss.config.js）
+- [ ] 内置安装koa，O配置使用ssr环境（本地ssr调试待定）
 - [x] 发布至npm，让安装更为简单
 - [ ] 脚手架加入easy-cookies，减少你对缓存的选择
 - [ ] 更多内容敬请期待
@@ -27,13 +27,9 @@ cd projects && npm install
 ```
 执行以下命令，进行本地开发
 ```
-npm run dev 运行前确保本地有nodemon模块
+npm run dev
 ```
-打包静态文件（有客户端build与服务端server-build）
+打包单页应用文件
 ```
 npm run build
-```
-启动服务端渲染（确保已经运行了npm run build）
-```
-npm run start 运行前确保本地有nodemon模块
 ```

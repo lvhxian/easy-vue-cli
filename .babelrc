@@ -1,33 +1,17 @@
 {
   "presets": [
-    "stage-1"
+    ["env", {
+      "modules": false,
+      "targets": {
+        "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
+      }
+    }],
+    "stage-2"
   ],
-  "plugins": [
-    "transform-vue-jsx",
-    "syntax-dynamic-import"
-  ],
+  "plugins": ["transform-vue-jsx", "transform-runtime"],
   "env": {
-    "browser": {
-      "presets": [
-        [
-          "env", {
-            "target": {
-              "browsers": ["last 2 version", "safari >= 7"]
-            }
-          }
-        ]
-      ]
-    },
-    "node": {
-      "presets": [
-        [
-          "env", {
-            "target": {
-              "node": "current"
-            }
-          }
-        ]
-      ]
+    "test": {
+      "presets": ["env", "stage-2"]
     }
   }
 }
