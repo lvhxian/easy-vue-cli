@@ -1,11 +1,11 @@
 export default [
   {
     path: '/',
-    redirect: '/app' // 默认路由跳转
+    redirect: '/hello'
   },
   {
-    path: '/app',
-    name: 'app',
-    component: () => import(/* webpackChunkName: "app" */ '../../views/app.vue') // webpackChunkName支持分模块打包
+    path: '/hello',
+    name: 'hello',
+    component: () => import(/* webpackChunkName: "apps" */ '../../views/app.vue') // webpackChunkName支持分模块打包
   }
 ]

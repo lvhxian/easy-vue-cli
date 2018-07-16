@@ -1,5 +1,5 @@
-export default {
-  updateCount (state, data) {
-    state.count = data.num
-  }
+let mustations = {
+
 }
+
+export default mustations

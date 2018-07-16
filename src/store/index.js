@@ -6,7 +6,7 @@ import actions from './actions/actions'
 // 修改state的时候会打印日志
 import createLogger from 'vuex/dist/logger'
 
-const isDev = process.env.NODE_ENV === 'development' // 判断是否为开发环境
+const isDev = process.env.NODE_ENV === 'development'  // 判断是否为开发环境
 
 // 创建一个Vuex实例
 export default () => {
