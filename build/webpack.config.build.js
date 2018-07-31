@@ -37,15 +37,21 @@ const ProWebpackConfig = merge(BaseWebpackConfig, {
             chunks: 'initial',
             minChunks: 2
           },
-          default: {
-            minChunks: 2,
-            priority: -20,
+          styles: { // css调整
+            name: 'styles',
+            test: /\.(scss|css)$/,
+            chunks: 'all',
+            minChunks: 1,
             reuseExistingChunk: true,
+            enforce: true
           },
           // 抽取公共模块
           vendors: {
-            test: /[\\/]node_modules[\\/]/,
-            priority: -10
+            name: 'vendor',
+            chunks: 'initial',
+            priority: -10,
+            reuseExistingChunk: false,
+            test: /node_modules\/(.*)\.js/
           }
         }
       },
@@ -70,8 +76,8 @@ const ProWebpackConfig = merge(BaseWebpackConfig, {
     // 出口模块
     output: {
       path: config.build.assetsRoot,
-      filename: utils.assetsPath('js/[name].[chunkhash].js'),  // 入口文件名
-      chunkFilename: utils.assetsPath('js/[id].[chunkhash].js') // 公用模块
+      filename: utils.assetsPath('js/main.[chunkhash].js'),  // 入口文件名
+      chunkFilename: utils.assetsPath('js/[name].[chunkhash].js') // 分离式公用模块
     },
     // 插件
     plugins: [
@@ -96,8 +102,8 @@ const ProWebpackConfig = merge(BaseWebpackConfig, {
       }),
       // 提取css
       new MiniCssExtractPlugin({
-        filename: utils.assetsPath('css/[name].[hash:8].css'), // CSS公共区
-        chunkFilename: "[id].css"
+        filename: utils.assetsPath('css/styls.[name].css'), // 打包css
+        chunkFilename: utils.assetsPath('css/styls.[contenthash:12].css') // CSS公共区
       }),
       new webpack.optimize.ModuleConcatenationPlugin(),
       new webpack.HashedModuleIdsPlugin(),

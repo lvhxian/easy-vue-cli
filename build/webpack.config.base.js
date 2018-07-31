@@ -91,7 +91,7 @@ const config = {
                 test: /\.styl/,
                 include: [utils.resolve('src')],
                 use: [
-                  'vue-style-loader',
+                  isDev ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
                   'css-loader',
                   {
                       loader: 'postcss-loader',
